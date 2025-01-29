@@ -1,12 +1,391 @@
 <!DOCTYPE html>
-<html>
+<html lang="de">
 <head>
-<title>Giovanni Zarbo</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            height: 100%;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 80px;
+            background-color: #130F14;
+            color: #DAD9D9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2rem;
+            z-index: 1000;
+        }
+
+        /* Main Content */
+        .container {
+            height: 100vh;
+            width: 100%;
+            scroll-snap-type: y mandatory;
+            overflow-y: scroll;
+        }
+
+        .section {
+            height: 100vh;
+            width: 100%;
+            scroll-snap-align: start;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #201229; /* alternate background clr */
+        }
+
+        .section:nth-child(odd) {
+            background: #201229;
+        }
+
+		.artwork {
+			display: flex;
+            gap: 100px;
+			flex-direction: row;
+			max-width: 90%; 
+			margin: 0 auto; 
+		}
+
+        .artwork h2 {
+            margin-bottom: 1rem;
+            text-align: right;
+        }
+
+        .artwork img {
+            max-height: 600px;
+            max-width: 400px;
+            border: 8px solid #6B5569
+        }
+        .link {
+            text-decoration: none; /* Entfernt die Unterstreichung */
+            color: #007BFF;
+            font-weight: bold;
+        }
+
+        .link:hover {
+            color: #0056b3;
+        }
+.artwork-text p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #F5F5F5; /* p color */
+    text-align: left;
+    max-width:600px;
+    word-wrap:break-word;
+    min-width: 600px;
+    max-width: 600px;
+}
+		.artwork-text {
+    flex: 1;
+    text-align: left;
+    color: #DAD9D9;
+}
+.artwork-text h2 {
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    color: #DAD9D9; /* h2 color */
+    text-align: left;
+}
+  /* Dots */
+        .dots {
+            position: fixed;
+            top: 50%;
+            right: 20px;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            z-index: 1000;
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            background-color: #130F14; /* dot color unactive */
+            border-radius: 50%;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .dot.active {
+            background-color: #793C9F; /* dot color */
+        }
+
+        .dot span {
+            position: absolute;
+            top: 50%;
+            right: 30px;
+            transform: translateY(-50%) translateX(100%);
+            white-space: nowrap;
+            background: #793C9F;  /* hidden box on side- dot */
+            color: #DAD9D9;
+            padding: 5px 10px;
+            border-radius: 5px;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+        }
+
+        .dot:hover span {
+            opacity: 1;
+            transform: translateY(-50%) translateX(0);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
 </head>
 <body>
+    <header>Giovanni Zarbo</header>
 
-<h1>Hallo</h1>
-<p>Test</p>
+    <div class="container">
 
+<div class="section" id="artwork1">
+    <div class="artwork">
+        <div class="artwork-image">
+            <img src="storage\1. donut classic klausurersatzleistung\donut180.png" alt="Donut Classic Projekt">
+        </div>
+        <div class="artwork-text">
+            <h2>Donut Classic Projekt</h2>
+            <p>
+                Donut Classic ist ein Designprojekt, das eine Persona, ein Logo und eine Verpackung umfasst. Es wurde im Rahmen meiner Klausurersatzleistung entwickelt und kombiniert minimalistisches Design mit einer eleganten Ästhetik Das Produkt wurde speziell für eine ältere Zielgruppe entworfen und überzeugt durch eine schlichte, hochwertige Gestaltung.
+            </p>
+                        <p>
+                            <br> <a class=link target="_blank" href="storage\1. donut classic klausurersatzleistung\Giovanni - Donutbox fertig.pdf">Link zur PDF</a>
+                        </p>
+                        <p>
+                             <a class=link target="_blank" href="storage\1. donut classic klausurersatzleistung\Zarbo-Giovanni donut Dokumentation.pdf">Link zur PDF Dokumentation</a>
+                        </p>
+        </div>
+    </div>
+</div>
+
+<div class="section" id="artwork2">
+    <div class="artwork">
+        <div class="artwork-image">
+            <img src="storage\2. energie wettbewerb\energie wettbewerb.jpg" alt="Energie Plakat">
+        </div>
+        <div class="artwork-text">
+            <h2>Energie Sparen Plakat (Wettbewerb)</h2>
+            <p>
+            Dieses Plakat wurde entworfen, um das Energiesparen in Klassenzimmern zu fördern. Das Hauptmotiv zeigt ein leeres Klassenzimmer mit hochgestellten Stühlen, um die Botschaft „Stühle auf, Heizung aus“ visuell zu verstärken. Statt einer Heizung wurde ein Thermometer integriert, um die Idee zu unterstützen. Die Farbgestaltung orientiert sich am Bild mit warmen Braun- und Rundelementen. Das Plakat zielt darauf ab, schnell Aufmerksamkeit zu erregen und klare Informationen mit minimalem Text zu vermitteln.
+                
+            </p> 
+                    <p>
+                        <br> <a class=link target="_blank" href="storage\2. energie wettbewerb\Energie wettbewerb.pdf">Link zur PDF</a>
+                    </p>
+            
+        
+        </div>
+    </div>
+</div>
+
+<div class="section" id="artwork3">
+    <div class="artwork">
+        <div class="artwork-image">
+            <img src="storage\3. handynutzung\poste handynutzung fix.jpg" alt="Handynutzung Plakat">
+        </div>
+        <div class="artwork-text">
+            <h2>Handynutzung Plakat</h2>
+            <p>
+            Dieses Plakat thematisiert die Handynutzung und setzt dabei auf eine kreative Gestaltung. Die X-Achse des Diagramms wird durch ein Ladekabel dargestellt, das ein Handy auf der rechten Seite lädt. Dieses visuelle Element verstärkt die Thematik und macht das Plakat auffälliger. Durch das klare Design und die intuitive Darstellung vermittelt es Informationen schnell und ansprechend.
+            </p>
+                    <p>
+                        <br> <a class=link target="_blank" href="storage\3. handynutzung\poste handynutzung 2.pdf">Link zur PDF</a>
+                    </p>
+        </div>
+    </div>
+</div>
+
+<div class="section" id="artwork4">
+    <div class="artwork">
+        <div class="artwork-image">
+            <img src="storage\4. arbeiten am bildschirm\Arbeiten am Bildschirm jpg.jpg" alt="Bildschirmarbeit Plakat">
+        </div>
+        <div class="artwork-text">
+            <h2>Bildschirmarbeit Plakat</h2>
+            <p>
+            Dieses Plakat informiert über ergonomische Bildschirmarbeit und orientiert sich farblich am Rot des BG-Logos. Auf der rechten Seite visualisieren Piktogramme verschiedene wichtige Aspekte in Stichpunkten. Oben rechts befindet sich ein Piktogramm eines Schreibtisches, das einen Arbeitsplatz symbolisiert. Die klare Gestaltung sorgt für eine schnelle und verständliche Informationsvermittlung.
+            </p>
+                    <p>
+                        <br> <a class=link target="_blank" href="storage\4. arbeiten am bildschirm\Arbeiten am Bildschirm Plakat.pdf">Link zur PDF</a>
+                    </p>
+        </div>
+    </div>
+</div>
+
+
+<div class="section" id="artwork5">
+    <div class="artwork">
+        <div class="artwork-image">
+            <img src="storage\5. 40 jahre ernst-litfass-schule\40 jahre erns-litfassimg.jpg" alt="Jubileum Plakat">
+        </div>
+        <div class="artwork-text">
+            <h2>Jubileum Plakat</h2>
+            <p>
+            Dieses Plakat wurde für das Jubiläum der Ernst-Litfaß-Schule gestaltet. Oben geht das Bild der Schule sanft in eine weiße Fläche über. Die Schwarz-Weiß-Gestaltung und die alte Schriftart lassen das Plakat nostalgisch wirken und betonen den festlichen Anlass.
+            </p>
+                    <p>
+                        <br> <a class=link target="_blank" href="storage\5. 40 jahre ernst-litfass-schule\40 jahre erns-litfass.pdf">Link zur PDF</a>
+                    </p>
+        </div>
+    </div>
+</div>
+
+<div class="section" id="artwork6">
+    <div class="artwork">
+        <div class="artwork-image">
+            <img src="storage\6. ruber project\ruberr.jpg" alt="Ruber Projekt">
+        </div>
+        <div class="artwork-text">
+            <h2>Ruber Projekt</h2>
+            <p>
+            Für das Projekt „Ruber“ habe ich ein Logo und zwei Grafiken erstellt. Die erste Grafik zeigt das Logo zusammen mit dem Schriftzug „Ruber“. Die zweite Grafik enthält alle Designelemente, die als Hintergrund verwendet werden können. Das Logo wurde als stilisierter Rubin gestaltet, um den Namen „Ruber“ widerzuspiegeln. Es wurde bewusst einfach gehalten, da es für ein Spiel gedacht war, das in Pixelgrafik dargestellt wird.
+            </p>
+                    <p>
+                        <br> <a class=link target="_blank" href="storage\6. ruber project\ruberprojekt.pdf">Link zur PDF</a>
+                    </p>
+        </div>
+    </div>
+</div>
+
+<div class="section" id="artwork7">
+    <div class="artwork">
+        <div class="artwork-image">
+            <img src="storage\7. sommerfest pirol plakat\LA03 - sommerfest pirol.jpg" alt="Sommerfest Plakat">
+        </div>
+        <div class="artwork-text">
+            <h2>Sommerfest Plakat</h2>
+            <p>
+                Dieses Plakat wurde für das Sommerfest der Firma Pirol gestaltet. Der Hintergrund ist in Blau gehalten, um eine sommerliche Atmosphäre zu vermitteln. Das Design soll fröhlich und einladend wirken, perfekt für die Feierlichkeiten des Sommerfests.
+            </p>
+                    <p>
+                        <br> <a class=link target="_blank" href="storage\7. sommerfest pirol plakat\LA03 - sommerfest pirol.pdf">Link zur PDF</a>
+                    </p>
+        </div>
+    </div>
+</div>
+
+<div class="section" id="artwork8">
+    <div class="artwork">
+        <div class="artwork-image">
+            <img src="storage\8. plakat meinkiez\plakat meinkiez.jpg" alt="&#34MeinKiez&#34 Projekt">
+        </div>
+        <div class="artwork-text">
+            <h2>"#MeinKiez" Projekt</h2>
+            <p>
+                Das Plakat „#meinkiez“ erinnert an die Geschichte des Roten Weddings. Der rote Hintergrund und das Bild des Weddings mit sanftem Verlauf symbolisieren die historische Bedeutung des Viertels. Hände, die nach oben strecken, repräsentieren den Widerstand und die Ereignisse wie der Blutmai 1929. Das Design betont die prägende Geschichte des Gebiets.
+            </p>
+                    <p>
+                        <br> <a class=link target="_blank" href="storage/8. plakat #meinkiez/Plakat #MeinKiez.pdf">Link zur PDF</a>
+                    </p>
+        </div>
+    </div>
+</div>
+
+<div class="section" id="artwork9">
+    <div class="artwork">
+        <div class="artwork-image">
+            <img src="storage\9. beruffachschule plakat\BERUFSFACHSCHULE plakat 2021.jpg" alt="Beruffachschule Plakat">
+        </div>
+        <div class="artwork-text">
+            <h2>Beruffachschule Plakat</h2>
+            <p>
+                Das Plakat für die Beruffachschule Medientechnik wurde im selben Stil wie die anderen Plakate der Serie der Ernst-Litfaß-Schule gestaltet. Es zeigt, was die Schule im Bereich Medientechnik bietet und hebt sich durch die blaue Farbgestaltung hervor, die mit der Arbeit an PCs in Verbindung steht. Unten links ist ein PC abgebildet, und ein Mauszeiger zeigt ein rechtsklickmenü, das individuell angepasst wurde und verschiedene Optionen darstellt. Das Design vermittelt die moderne und technische Ausrichtung der Ausbildung.
+            </p>
+                    <p>
+                        <br> <a class=link target="_blank" href="storage\9. beruffachschule plakat\BERUFSFACHSCHULE plakat 2021.pdf">Link zur PDF</a>
+                    </p>
+        </div>
+    </div>
+</div>
+
+<div class="section" id="artwork10">
+    <div class="artwork">
+        <div class="artwork-image">
+            <img src="storage\10. kalendar berlin\januar kalendar.jpg" alt="1. seite - Kalendar Projekt">
+        </div>
+        <div class="artwork-text">
+            <h2>Kalendar Projekt</h2>
+            <p>
+                    Dieser Kalender zeigt Bilder von der S-Bahn und deren Stationen in Berlin, wobei für jede Jahreszeit ein Foto ausgewählt wurde. Die Fotos wurden durch Farbkorrekturen bemalt, um die Stimmung jeder Saison widerzuspiegeln. Jede Seite des Kalenders zeigt so die Besonderheiten Berlins in verschiedenen Jahreszeiten, mit einem kreativen, einzigartigen Farbfilter, der den Charakter jeder Saison einfängt.
+            </p>
+                    <p>
+                        <br> <a class=link target="_blank" href="storage\10. kalendar berlin\Kalendar.pdf">Link zur PDF</a>
+                    </p>
+        </div>
+    </div>
+</div>
+
+
+
+    </div>
+
+    <div class="dots">
+        <div class="dot" data-target="#artwork1"><span>Donut Classic Projekt</span></div>
+        <div class="dot" data-target="#artwork2"><span>Energie sparen Plakat</span></div>
+        <div class="dot" data-target="#artwork3"><span>Handynutzung Plakat</span></div>
+		<div class="dot" data-target="#artwork4"><span>Bildschirmarbeit Plakat</span></div>
+        <div class="dot" data-target="#artwork5"><span>Jubileum Plakat</span></div>
+        <div class="dot" data-target="#artwork6"><span>Ruber Projekt</span></div>
+        <div class="dot" data-target="#artwork7"><span>Sommerfest Plakat</span></div>
+        <div class="dot" data-target="#artwork8"><span>Meinkiez Projekt</span></div>
+        <div class="dot" data-target="#artwork9"><span>Beruffachschule Plakat</span></div>
+        <div class="dot" data-target="#artwork10"><span>Kalendar Projekt</span></div>
+    </div>
+
+    <script>
+        // Smooth Scroll Functionality
+const dots = document.querySelectorAll('.dot');
+const sections = document.querySelectorAll('.section');
+
+// Scroll to target on click
+dots.forEach(dot => {
+    dot.addEventListener('click', () => {
+        const target = document.querySelector(dot.dataset.target);
+        target.scrollIntoView({ behavior: 'smooth' });
+    });
+});
+
+// Highlight Active Dot on Scroll
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const index = Array.from(sections).indexOf(entry.target);
+            dots.forEach(d => d.classList.remove('active')); // Deactivate all dots
+            dots[index].classList.add('active'); // Activate the dot corresponding to the visible section
+        }
+    });
+}, { threshold: 0.6 }); // Adjust threshold as needed to control when a section is considered visible
+
+// Observe each section
+sections.forEach(section => observer.observe(section));
+    </script>
+	
+	
 </body>
 </html>
